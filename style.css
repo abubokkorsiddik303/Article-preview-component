@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Manrope", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(211, 19%, 78%);
+  height: 100vh;
+  padding: 4rem;
+}
+
+.hidden-container {
+  background-color: hsl(217, 19%, 35%);
+  display: flex;
+  width: max-content;
+  padding: 2rem 3rem;
+  gap: 2rem;
+  border-radius: 8px;
+
+  position: absolute;
+  right: 0;
+  bottom: 115%;
+
+  transform: translateX(42%);
+}
+
+.hidden-container::after {
+  content: "";
+  height: 20px;
+  aspect-ratio: 1;
+
+  rotate: 45deg;
+  background-color: hsl(217, 19%, 35%);
+
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: -1;
+}
+
+.hidden-text {
+  color: hsl(212, 23%, 69%);
+  font-size: 1.5rem;
+  letter-spacing: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80rem;
+  box-shadow: 0px 10px 10px 0px hsl(212, 23%, 69%);
+
+  border-radius: 8px;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 8px 0 0 8px;
+}
+
+.text-box {
+  background-color: hsl(210, 46%, 95%);
+  padding: 4rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+  margin-bottom: 4rem;
+}
+
+.text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  color: hsl(217, 19%, 35%);
+}
+
+.owner-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.owner-img img {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.owner-date {
+  font-size: 1.2rem;
+  color: hsl(217, 19%, 35%);
+  font-weight: 500;
+}
+
+.share-btn {
+  margin-left: auto;
+  z-index: 999;
+}
+
+.share-btn img {
+  background-color: hsla(212, 23%, 69%, 0.342);
+  padding: 1.2rem;
+  border-radius: 50%;
+  
+}
+
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+  .img-box img {
+    border-radius: 0;
+  }
+  .text-box {
+    border-radius: 0;
+    padding: 0;
+  }
+  .text-top {
+    padding: 4rem;
+  }
+  .owner-box {
+    padding: 1rem 3rem;
+  }
+  .hidden-container {
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
